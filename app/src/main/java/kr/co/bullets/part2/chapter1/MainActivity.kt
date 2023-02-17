@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button1.setOnClickListener {
+            // 엑티비티의 프래그먼트 관리자
+            // apply: 객체 초기화
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.fragmentContainer, WebViewFragment())
                 commit()
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 
 //        val webView = findViewById<WebView>(R.id.webView)
+//        In-app browser (v), External browser
 //        webView.webViewClient = WebViewClient()
 //        webView.settings.javaScriptEnabled = true
 //        webView.loadUrl("https://google.com")
