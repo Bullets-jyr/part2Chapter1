@@ -12,13 +12,19 @@ class ViewPagerAdapter(private val mainActivity: MainActivity) : FragmentStateAd
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                return WebViewFragment(position)
+                return WebViewFragment(position, "https://comic.naver.com/webtoon/weekdayList?week=mon").apply {
+                    listener = mainActivity
+                }
             }
             1 -> {
-                return WebViewFragment(position)
+                return WebViewFragment(position, "https://comic.naver.com/webtoon/weekdayList?week=tue").apply {
+                    listener = mainActivity
+                }
             }
             else -> {
-                return WebViewFragment(position)
+                return WebViewFragment(position, "https://comic.naver.com/webtoon/weekdayList?week=wed").apply {
+                    listener = mainActivity
+                }
             }
         }
     }
