@@ -37,4 +37,18 @@ class MainActivity : AppCompatActivity() {
 //        webView.settings.javaScriptEnabled = true
 //        webView.loadUrl("https://google.com")
     }
+
+    override fun onBackPressed() {
+        val currentFragment = supportFragmentManager.fragments[0]
+        if (currentFragment is WebViewFragment) {
+            if (currentFragment.canGoBack()) {
+                currentFragment.goBack()
+            } else {
+                super.onBackPressed()
+            }
+        } else {
+            super.onBackPressed()
+        }
+//        super.onBackPressed()
+    }
 }
