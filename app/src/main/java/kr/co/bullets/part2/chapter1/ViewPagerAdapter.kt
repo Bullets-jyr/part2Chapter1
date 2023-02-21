@@ -12,13 +12,13 @@ class ViewPagerAdapter(private val mainActivity: MainActivity) : FragmentStateAd
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                return WebViewFragment()
+                return WebViewFragment(position)
             }
             1 -> {
-                return BFragment()
+                return WebViewFragment(position)
             }
             else -> {
-                return WebViewFragment()
+                return WebViewFragment(position)
             }
         }
     }
